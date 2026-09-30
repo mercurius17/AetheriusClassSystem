@@ -8,4 +8,3 @@ handlers on the existing Core router; it does not create a competing router/view
 Combat adapter, verified-perks.json and integration changes originate from
 AetheriusDamageSystem commit f21faf5c4a1264f787545e20a1e4dbadc6362e80.
 Source: https://github.com/mercurius17/AetheriusDamageSystem
-

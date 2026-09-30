@@ -256,19 +256,12 @@
   },
   "One-Handed Mastery": {
     "name": "One-Handed Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BABE4",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_One_HandedMastery",
-      "One_HandedMastery",
-      "Perk_One_HandedMastery",
-      "One-Handed Mastery"
+      "VKR_One_000_OneHandedMastery_Perk_WasArmsman1"
     ]
   },
   "Rune Mestre (1)": {
@@ -613,19 +606,12 @@
   },
   "Heavy Armor Mastery": {
     "name": "Heavy Armor Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BCD2A",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_HeavyArmorMastery",
-      "HeavyArmorMastery",
-      "Perk_HeavyArmorMastery",
-      "Heavy Armor Mastery"
+      "VKR_Hea_000_HeavyArmorMastery_Perk_WasJuggernaut1"
     ]
   },
   "Cushioned (2)": {
@@ -766,19 +752,12 @@
   },
   "Block Mastery": {
     "name": "Block Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BCCAE",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_BlockMastery",
-      "BlockMastery",
-      "Perk_BlockMastery",
-      "Block Mastery"
+      "VKR_Bck_000_BlockMastery_Perk_WasShieldWall1"
     ]
   },
   "Deflect Arrows": {
@@ -919,19 +898,12 @@
   },
   "Light Armor Mastery": {
     "name": "Light Armor Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BE123",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_LightArmorMastery",
-      "LightArmorMastery",
-      "Perk_LightArmorMastery",
-      "Light Armor Mastery"
+      "VKR_Lia_000_LightArmorMastery_Perk_WasAgileDefender1"
     ]
   },
   "Agility": {
@@ -1021,19 +993,12 @@
   },
   "Two-Handed Mastery": {
     "name": "Two-Handed Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BABE8",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_Two_HandedMastery",
-      "Two_HandedMastery",
-      "Perk_Two_HandedMastery",
-      "Two-Handed Mastery"
+      "VKR_Two_000_TwoHandedMastery_Perk_WasBarbarian1"
     ]
   },
   "Brutal Fighter": {
@@ -1582,19 +1547,12 @@
   },
   "Archery Mastery": {
     "name": "Archery Mastery",
-    "localId": "0x000000",
+    "localId": "0x0BABED",
     "candidatePlugins": [
-      "Vokrii - Minimalistic Perks of Skyrim.esp",
-      "Vokrii.esp",
-      "Vokrii.esl",
-      "Skyrim.esm",
-      "Update.esm"
+      "Skyrim.esm"
     ],
     "editorIdAliases": [
-      "VKR_ArcheryMastery",
-      "ArcheryMastery",
-      "Perk_ArcheryMastery",
-      "Archery Mastery"
+      "VKR_Arc_000_ArcheryMastery_Perk_WasOverdraw1"
     ]
   },
   "Far Shot (2)": {

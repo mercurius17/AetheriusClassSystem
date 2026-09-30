@@ -47,7 +47,7 @@ export interface PerkMapping {
   editorIdAliases: string[];
 }
 
-export type ResolutionStrategy = 'CACHE' | 'LOCAL_ID_PLUGIN' | 'EDITOR_ID' | 'SEMANTIC_NAME' | 'CONFIG_OVERRIDE' | 'FALLBACK_MOCK';
+export type ResolutionStrategy = 'CACHE' | 'LOCAL_ID_PLUGIN' | 'EDITOR_ID' | 'SEMANTIC_NAME' | 'CONFIG_OVERRIDE' | 'FALLBACK_MOCK' | 'UNRESOLVED';
 
 export interface ResolvedPerk {
   name: string;
@@ -61,6 +61,7 @@ export interface ResolvedPerk {
 }
 
 export interface PlayerClassState {
+  combatRevision?: number;
   playerId: number;
   playerName: string;
   classId: string | null;

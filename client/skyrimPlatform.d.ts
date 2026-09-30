@@ -90,18 +90,3 @@ declare namespace mp {
   export function get(key: string): any;
   export function set(key: string, value: any): void;
 }
-
-// Prisma UI CEF / SKSE Interop ambient types
-declare namespace PrismaUIBridge {
-  export interface PrismaViewHandle {
-    viewId: number;
-  }
-  export function createView(htmlPath: string, onDomReady?: () => void): PrismaViewHandle;
-  export function focus(view: PrismaViewHandle, pauseGame?: boolean): void;
-  export function unfocus(view: PrismaViewHandle): void;
-  export function show(view: PrismaViewHandle): void;
-  export function hide(view: PrismaViewHandle): void;
-  export function invoke(view: PrismaViewHandle, script: string): void;
-  export function interopCall(view: PrismaViewHandle, functionName: string, argument: string): void;
-  export function registerListener(view: PrismaViewHandle, functionName: string, callback: (data: string) => void): void;
-}

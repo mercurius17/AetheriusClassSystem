@@ -38,7 +38,8 @@ export class PerkResolver {
   constructor(
     customDescriptions?: Record<string, PerkDescription>,
     customMappings?: Record<string, PerkMapping>,
-    runtimeLookup?: RuntimeFormLookup
+    runtimeLookup?: RuntimeFormLookup,
+    private readonly allowMockForTests: boolean = false
   ) {
     this.descriptions = customDescriptions || defaultPerksDesc;
     this.mappings = customMappings || defaultPerkMappings;
@@ -83,7 +84,7 @@ export class PerkResolver {
 
     let resolvedFormId = 0;
     let pluginFound: string | null = null;
-    let strategyUsed: ResolutionStrategy = 'FALLBACK_MOCK';
+    let strategyUsed: ResolutionStrategy = 'UNRESOLVED';
     let isResolved = false;
 
     if (this.runtimeLookup) {
@@ -127,7 +128,7 @@ export class PerkResolver {
     }
 
     // ESTRATÉGIA 4: Mock determinístico para desenvolvimento/testes ou fallback seguro
-    if (!isResolved) {
+    if (!isResolved && this.allowMockForTests) {
       // Gera FormID determinístico a partir do hash do nome para não quebrar testes ou execução offline
       resolvedFormId = this.generateDeterministicFormId(cleanName);
       strategyUsed = 'FALLBACK_MOCK';

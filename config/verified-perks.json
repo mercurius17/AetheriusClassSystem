@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "auditEpoch": "e2-d180c51adf12773b",
+  "pluginPins": [
+    {
+      "size": 621166,
+      "crc32": 511020973,
+      "sha256": "6d60ef6e669ea4f388c01918164092fda174bd70a13fe4cdc7cfb566d3729f1c",
+      "filename": "Vokrii - Minimalistic Perks of Skyrim.esp"
+    }
+  ],
+  "perks": [
+    {
+      "key": "Skyrim.esm:0BABE4",
+      "editorId": "VKR_One_000_OneHandedMastery_Perk_WasArmsman1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "One-Handed Mastery",
+      "effects": [
+        {
+          "entryPoint": "CalculateWeaponDamage",
+          "skill": "OneHanded",
+          "coefficient": 0.01,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079343",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E714",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E711",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E712",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E713",
+                "expected": true,
+                "orNext": false
+              }
+            ]
+          ]
+        },
+        {
+          "entryPoint": "CalculateMyCriticalHitDamage",
+          "skill": "OneHanded",
+          "coefficient": 0.05,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079343",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E714",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E711",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E712",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E713",
+                "expected": true,
+                "orNext": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Skyrim.esm:0BABE8",
+      "editorId": "VKR_Two_000_TwoHandedMastery_Perk_WasBarbarian1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "Two-Handed Mastery",
+      "effects": [
+        {
+          "entryPoint": "ModAttackDamage",
+          "skill": "TwoHanded",
+          "coefficient": 0.01,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079346",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D932",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D931",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D930",
+                "expected": true,
+                "orNext": true
+              }
+            ]
+          ]
+        },
+        {
+          "entryPoint": "CalculateMyCriticalHitDamage",
+          "skill": "TwoHanded",
+          "coefficient": 0.05,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079346",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D932",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D931",
+                "expected": true,
+                "orNext": true
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06D930",
+                "expected": true,
+                "orNext": true
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Skyrim.esm:0BABED",
+      "editorId": "VKR_Arc_000_ArcheryMastery_Perk_WasOverdraw1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "Archery Mastery",
+      "effects": [
+        {
+          "entryPoint": "CalculateWeaponDamage",
+          "skill": "Marksman",
+          "coefficient": 0.01,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:07934A",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E715",
+                "expected": true,
+                "orNext": false
+              }
+            ]
+          ]
+        },
+        {
+          "entryPoint": "CalculateMyCriticalHitDamage",
+          "skill": "Marksman",
+          "coefficient": 0.05,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:07934A",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:01E715",
+                "expected": true,
+                "orNext": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Skyrim.esm:0BCCAE",
+      "editorId": "VKR_Bck_000_BlockMastery_Perk_WasShieldWall1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "Block Mastery",
+      "effects": [
+        {
+          "entryPoint": "ModPercentBlocked",
+          "skill": "Block",
+          "coefficient": 0.005,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079355",
+                "expected": false,
+                "orNext": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Skyrim.esm:0BCD2A",
+      "editorId": "VKR_Hea_000_HeavyArmorMastery_Perk_WasJuggernaut1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "Heavy Armor Mastery",
+      "effects": [
+        {
+          "entryPoint": "ModArmorRating",
+          "skill": "HeavyArmor",
+          "coefficient": 0.01,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:07935E",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06BBD2",
+                "expected": true,
+                "orNext": false
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:0965B2",
+                "expected": false,
+                "orNext": false
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Skyrim.esm:0BE123",
+      "editorId": "VKR_Lia_000_LightArmorMastery_Perk_WasAgileDefender1",
+      "winner": "Vokrii - Minimalistic Perks of Skyrim.esp",
+      "name": "Light Armor Mastery",
+      "effects": [
+        {
+          "entryPoint": "ModArmorRating",
+          "skill": "LightArmor",
+          "coefficient": 0.01,
+          "conditions": [
+            [
+              {
+                "function": "HasPerk",
+                "key": "Skyrim.esm:079376",
+                "expected": false,
+                "orNext": false
+              }
+            ],
+            [
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:06BBD3",
+                "expected": true,
+                "orNext": false
+              },
+              {
+                "function": "HasKeyword",
+                "key": "Skyrim.esm:0965B2",
+                "expected": false,
+                "orNext": false
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

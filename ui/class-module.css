@@ -1,0 +1,69 @@
+/* Scoped to CLASSE. Mirrors the translucent Server workspace in UI Core. */
+.shell.is-class-workspace .world-shade { background: rgba(0,0,0,.12) !important; }
+.shell.is-preview.is-class-workspace::before { opacity: 1 !important; }
+.shell.is-class-workspace .workspace-frame { background: rgba(0,0,0,.68); border: 0; box-shadow: 0 22px 60px rgba(0,0,0,.32); }
+.shell.is-class-workspace .workspace-footer { background: transparent; }
+.shell.is-class-workspace .workspace-topline,.shell.is-class-workspace .module-content { background: transparent; }
+.shell.is-class-workspace .shell-header,.shell.is-class-workspace .shell-footer,.shell.is-class-workspace .close-button,.shell.is-class-workspace kbd { border: 0; }
+.shell.is-class-workspace .close-button { color: #fff; }
+.shell.is-class-workspace .workspace-rule { background: transparent; }
+.shell.is-class-workspace .workspace-heading h1 { color: #f4f4f4; }
+.shell.is-class-workspace .module-content { padding-top: 8px; overflow: auto; }
+.aetherius-class { color: #f4f4f4; font-family: AetheriusFutura, 'Segoe UI', sans-serif; font-size: 14px; }
+.aetherius-class * { box-sizing: border-box; }
+.aetherius-class h2 { font: 600 clamp(22px,2.4vw,32px)/1.2 Georgia, serif; margin: 4px 0; color: #f4f4f4; }
+.aetherius-class h3 { font-size: 11px; font-weight: 600; letter-spacing: .14em; color: #bbbfc2; margin: 16px 0 10px; }
+.aetherius-class p { color: #b8bbbf; line-height: 1.6; margin: 6px 0; }
+.aetherius-class button,.aetherius-class input,.aetherius-class select { font: inherit; color: #eee; background: rgba(255,255,255,.025); border: 1px solid #ffffff24; border-radius: 4px; padding: 9px 12px; }
+.aetherius-class button { cursor: pointer; font-size: 10px; letter-spacing: .08em; }
+.aetherius-class button:hover { background: #ffffff0c; border-color: #ffffff60; }
+.aetherius-class :focus-visible { outline: 2px solid #4fc787; outline-offset: 3px; }
+.aetherius-class button:disabled { opacity: .4; cursor: default; }
+.aetherius-class button.class-primary { border-color: #4fc78780; color: #69cf99; background: #4fc78710; }
+.class-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 14px; }
+.class-toolbar p { font-size: 12px; }
+.class-layout { display: grid; gap: 28px; }
+.class-layout.is-selection { grid-template-columns: minmax(210px,26%) 1fr; }
+.class-catalog { padding-right: 16px; border-right: 1px solid #ffffff12; }
+.aetherius-class button.class-choice { display: flex; width: 100%; align-items: center; gap: 12px; text-align: left; border-color: transparent; padding: 7px 10px; margin: 2px 0; }
+.class-choice > span:first-of-type { flex: 1; }
+.class-choice small { display: block; font-size: 9px; color: #92969a; margin-top: 4px; letter-spacing: 0; }
+.class-icon { width: 36px; height: 36px; object-fit: contain; filter: grayscale(1); opacity: .8; }
+.class-choice.is-selected { background: #4fc78710 !important; border-color: #4fc78755 !important; color: #69cf99; }
+.class-choice.is-selected .class-icon { opacity: 1; }
+.class-identity { display: flex; gap: 16px; align-items: center; }
+.class-identity .class-icon { width: 58px; height: 58px; }
+.class-identity > div { flex: 1; }
+.class-kicker { color: #969b9e; font-size: 9px; letter-spacing: .2em; }
+.class-description { max-width: 85ch; font-size: 13px; padding: 12px 0; }
+.class-tabs { display: flex; gap: 18px; flex-wrap: wrap; border-bottom: 1px solid #ffffff18; margin: 8px 0 18px; }
+.class-tabs button { border: 0; border-radius: 0; background: none; padding: 12px 0; color: #aaa; }
+.class-tabs button[aria-pressed=true] { color: #69cf99; border-bottom: 2px solid #4fc787; }
+.class-stages { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 24px; }
+.class-stage { display: grid; grid-template-columns: 80px 1fr; gap: 16px; border-bottom: 1px solid #ffffff12; padding: 12px 0; }
+.class-stage-level { color: #a4a9ad; font-size: 10px; padding-top: 5px; }
+.class-stage-level small { display: block; font-size: 8px; margin-top: 8px; }
+.class-stage.is-unlocked .class-stage-level { color: #69cf99; }
+.class-skills { font-size: 11px; }
+.aetherius-class details { padding: 6px 0; color: #e5e5e5; font-size: 12px; }
+.aetherius-class summary { cursor: pointer; }
+.aetherius-class details p { font-size: 12px; }
+.class-note { font-size: 11px; padding: 12px 0; }
+.class-xp { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 11px; }
+.class-xp progress { width: 100%; height: 4px; border: 0; accent-color: #4fc787; }
+.class-xp progress::-webkit-progress-bar { background: #ffffff16; }
+.class-xp progress::-webkit-progress-value { background: #4fc787; }
+.class-spells { margin-bottom: 16px; }
+.class-attributes { max-width: 600px; margin: 8px 0 22px; }
+.class-attribute { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ffffff12; }
+.class-attribute > div { flex: 1; }.class-attribute h3 { color: #eee; margin: 0; }.class-attribute p { font-size: 12px; }
+.class-members article { display: flex; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid #ffffff12; }
+.class-members article > div { flex: 1; }.class-members p { font-size: 12px; }
+.aetherius-class form { display: flex; align-items: end; gap: 12px; margin: 18px 0; }
+.aetherius-class input { display: block; margin-top: 8px; }.aetherius-class label { color: #b8bbbf; font-size: 12px; }
+.class-management { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 18px; border-top: 1px solid #ffffff14; font-size: 11px; color: #a4a9ad; }
+.class-management a { color: #eee; margin-left: auto; }
+.class-feedback { min-height: 22px; font-size: 12px; }.class-empty { padding: 50px 20px; text-align: center; }
+.class-confirm { position: sticky; bottom: 0; padding: 20px; background: #080a09; border: 1px solid #ffffff40; }
+@media(max-width:900px) { .class-stages { grid-template-columns: 1fr; }.class-layout.is-selection { gap: 16px; grid-template-columns: 200px 1fr; }.class-identity { flex-wrap: wrap; } }
+@media(max-width:600px) { .class-layout.is-selection { grid-template-columns: 1fr; }.class-catalog { border: 0; padding: 0; }.class-catalog section { display: flex; flex-wrap: wrap; }.class-catalog h3 { width: 100%; }.aetherius-class button.class-choice { width: 50%; }.class-members article { flex-wrap: wrap; } }

@@ -16,7 +16,8 @@
     "shared/**/*",
     "server/**/*",
     "client/**/*",
-    "tests/**/*"
+    "tests/**/*",
+    "vendor/**/*.ts"
   ],
   "exclude": [
     "node_modules",

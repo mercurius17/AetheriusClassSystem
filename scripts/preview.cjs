@@ -30,6 +30,16 @@ router.register('class', 'demoGrantXp', (context, payload) => {
   return { player: updated, result: { message: awarded ? `Demonstração: +${awarded.toLocaleString('pt-BR')} EXP · Nível ${updated.level}.` : 'Demonstração: nível máximo atingido.' } };
 });
 const root = path.resolve(__dirname, '../dist/meridian/Data/MeridianUI/aetheriusui');
+router.register('class', 'demoResetClass', (context, payload) => {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload) || Object.keys(payload).length) throw new Error('Invalid demo payload');
+  const player = serverInstance.playerRepo.getPlayerState(context.actorId);
+  player.hasResetTicket = true;
+  serverInstance.playerRepo.savePlayerState(player);
+  const result = serverInstance.classSystem.resetClass(context.actorId);
+  const snapshot = serverInstance.handleClientPacket(context.actorId, 'requestInitialData', {}).data;
+  const { unlockedPerksData, partyId, isRaid, ...updated } = snapshot.player;
+  return { player: updated, result: { success: result.success, message: result.message } };
+});
 const bridge = `<script>
 window.AetheriusClassPreview = true;
 function previewReceive(packet) { window.dispatchEvent(new CustomEvent('aetherius-ui-message', { detail: btoa(unescape(encodeURIComponent(JSON.stringify(packet)))) })); }

@@ -16,6 +16,7 @@ test('UI uses authenticated actor and rejects injected identity and combat repor
   expect((await router.dispatch(envelope('selectClass', { classId: 'guardiao', playerId: 200 }, 'request-2'), context)).kind).toBe('error');
   expect((await router.dispatch(envelope('reportCombatKill', {}, 'request-3'), context)).error?.code).toBe('ACTION_UNAVAILABLE');
   expect((await router.dispatch(envelope('demoGrantXp', {}, 'request-4'), context)).error?.code).toBe('ACTION_UNAVAILABLE');
+  expect((await router.dispatch(envelope('demoResetClass', {}, 'request-5'), context)).error?.code).toBe('ACTION_UNAVAILABLE');
   expect(PlayerRepository.getInstance().getPlayerState(100).classId).toBeNull();
 });
 

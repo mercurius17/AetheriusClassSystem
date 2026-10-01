@@ -34,8 +34,12 @@
       const sum = () => Object.values(allocation).reduce((a, b) => a + b, 0);
       function apply(data) {
         if (!data || !data.player) throw new Error('Estado de classe indisponível.');
+        const previousClass = player?.classId;
+        const initial = !player;
         player = data.player;
-        if (player.classId) { selected = player.classId; inspecting = true; }
+        if (initial || previousClass !== player.classId) {
+          selected = player.classId; inspecting = !!player.classId; stageIndex = null; tab = 'progression';
+        }
       }
       function render() {
         if (disposed) return;
@@ -44,22 +48,23 @@
           return;
         }
         const cls = classes.find(c => c.id === selected);
-        const choosing = !player.classId;
-        container.innerHTML = choosing && !inspecting ? catalog() : `<div class="class-toolbar"><span class="class-breadcrumb">${choosing ? 'CLASSES DE COMBATE / APRESENTAÇÃO' : `${esc(player.playerName)} / ${esc(player.className)}`}</span><div>${choosing ? button('← ESCOLHER OUTRA CLASSE', 'backCatalog') : ''}${button('↻ ATUALIZAR', 'refresh')}</div></div>
+        const choosing = !player.classId || selected !== player.classId;
+        container.innerHTML = !inspecting ? catalog() : `<div class="class-toolbar"><span class="class-breadcrumb">${choosing ? 'CLASSES DE COMBATE / APRESENTAÇÃO' : `${esc(player.playerName)} / ${esc(player.className)}`}</span><div>${button('← TODAS AS CLASSES', 'backCatalog')}${player.classId && choosing ? button('MINHA CLASSE', 'ownClass') : ''}${button('↻ ATUALIZAR', 'refresh')}</div></div>
           <main class="class-detail">${cls ? `<header class="class-hero">${medallion(cls.id)}<div class="class-hero-copy"><span class="class-kicker">${esc(cls.archetype)}</span><h2>${esc(cls.name)}</h2><p class="class-motto">${esc(identities[cls.id][0])}</p>${ornament}<p class="class-specialties">${esc(identities[cls.id][1])}</p></div><div class="class-hero-seal"><span>CAMINHO</span><strong>${choosing ? 'I — XL' : String(player.level).padStart(2,'0')}</strong><small>${choosing ? 'PROGRESSÃO DE CLASSE' : 'NÍVEL DE CLASSE'}</small></div></header>
           <div class="class-introduction"><span class="class-section-mark" aria-hidden="true">✧</span><p class="class-description">${esc(cls.description)}</p></div>
           <div class="class-facts"><div>${icon('mestre_espadachim')}<span><small>PROGRESSÃO</small><strong>${cls.stages.length} marcos · Níveis 1 a 40</strong></span></div><div>${icon('invocador')}<span><small>${choosing ? 'REQUISITO' : 'EXPERIÊNCIA'}</small><strong>${choosing ? cls.requiresWinterholdStudent ? 'Vínculo com Winterhold' : 'Livre escolha' : `${player.currentXp.toLocaleString('pt-BR')} / ${player.nextLevelXp.toLocaleString('pt-BR')} XP`}</strong></span></div><div>${icon('curandeiro')}<span><small>${choosing ? 'ATRIBUTOS' : 'PONTOS DISPONÍVEIS'}</small><strong>${choosing ? '+15 pontos por nível' : player.unspentAttributePoints + ' pontos'}</strong></span></div></div>
-          ${choosing ? `<div class="class-enlist"><p>${cls.requiresWinterholdStudent && !player.hasWinterholdKeyword ? 'Você pode conhecer esta classe. A confirmação exige autorização do Colégio de Winterhold.' : 'Este é o caminho que você deseja seguir?'}</p>${button('CONFIRMAR ' + cls.name, 'select', `class="class-primary" ${busy || (cls.requiresWinterholdStudent && !player.hasWinterholdKeyword) ? 'disabled' : ''}`)}</div>` : ''}
+          ${!player.classId ? `<div class="class-enlist"><p>${cls.requiresWinterholdStudent && !player.hasWinterholdKeyword ? 'Você pode conhecer esta classe. A confirmação exige autorização do Colégio de Winterhold.' : 'Este é o caminho que você deseja seguir?'}</p>${button('CONFIRMAR ' + cls.name, 'select', `class="class-primary" ${busy || (cls.requiresWinterholdStudent && !player.hasWinterholdKeyword) ? 'disabled' : ''}`)}</div>` : ''}
+          ${player.classId && choosing ? `<p class="class-note">Você está inspecionando ${esc(cls.name)}. Sua classe atual é ${esc(player.className)}. Para trocar de classe, retorne à sua classe e use a redefinição.</p>` : ''}
           ${!choosing && window.AetheriusClassPreview === true ? `<aside class="class-demo"><div><strong>DEMONSTRAÇÃO LOCAL</strong><p>Concede a EXP para subir um nível. Simula ciclos sem cansaço diário.</p></div>${button('+ EXP PARA PRÓXIMO NÍVEL', 'demoXp', `class="class-primary" ${player.level >= 40 ? 'disabled' : ''}`)}</aside>` : ''}
           <nav class="class-tabs" aria-label="Detalhes da classe">${[['progression','PROGRESSÃO'],['spells','GRIMÓRIO'], ...(!choosing ? [['attributes','ATRIBUTOS']] : [])].map(([id,label]) => button(label, 'tab', `data-tab="${id}" aria-pressed="${tab === id}"`)).join('')}</nav>
           ${tab === 'progression' ? progression(cls, choosing) : tab === 'spells' ? spells(cls) : attributes()}
-          ${!choosing ? `<footer class="class-management">${button('REDEFINIR CLASSE', 'reset')}<span>${player.level <= 15 ? 'Redefinição gratuita até o nível 15.' : 'Requer Ticket de Troca de Classe.'}</span>${player.level >= 15 ? '<a href="https://aetherius.net.br/" target="_blank" rel="noopener noreferrer">OBTER TICKET ↗</a>' : ''}</footer>` : ''}` : ''}</main>`;
+          ${!choosing ? `<footer class="class-management">${button('REDEFINIR CLASSE', 'reset')}<span>${window.AetheriusClassPreview === true ? 'Demonstração: redefinição gratuita em qualquer nível.' : player.level <= 15 ? 'Redefinição gratuita até o nível 15.' : 'Requer Ticket de Troca de Classe.'}</span>${player.level > 15 && window.AetheriusClassPreview !== true ? '<a href="https://aetherius.net.br/" target="_blank" rel="noopener noreferrer">OBTER TICKET ↗</a>' : ''}</footer>` : ''}` : ''}</main>`;
         container.insertAdjacentHTML('beforeend', `<p class="class-feedback" role="status" aria-live="polite">${esc(message)}</p>`);
         if (busy) container.querySelectorAll('button, input, select').forEach(el => { el.disabled = true; });
       }
       function catalog() {
         const archetypes = [['CONJURADORES','conjuradores','I','Mestres do arcano'],['GUERREIROS','guerreiros','II','Força, aço e determinação'],['ESPECIALISTAS','especialistas','III','Precisão, sombras e astúcia']];
-        return `<header class="class-selection-heading"><span class="class-kicker">AETHERIUS · CAMINHOS DE COMBATE</span><h2>SELECIONE SUA CLASSE</h2><p>Dezoito caminhos. Escolha aquele que conta a sua história.</p>${ornament}</header>
+        return `${player.classId ? `<div class="class-toolbar"><span>SUA CLASSE · ${esc(player.className)}</span>${button('MINHA CLASSE', 'ownClass')}</div>` : ''}<header class="class-selection-heading"><span class="class-kicker">AETHERIUS · CAMINHOS DE COMBATE</span><h2>${player.classId ? 'CONHEÇA AS CLASSES' : 'SELECIONE SUA CLASSE'}</h2><p>${player.classId ? 'Explore os dezoito caminhos e suas habilidades.' : 'Dezoito caminhos. Escolha aquele que conta a sua história.'}</p>${ornament}</header>
           <div class="class-catalog">${archetypes.map(([group,id,number,subtitle]) => `<section class="class-archetype"><header><span class="archetype-number">${number}</span><img src="./modules/class/assets/ui/${id}.svg" alt="" class="archetype-insignia"><h3>${group}</h3><p>${subtitle}</p><span class="archetype-rule" aria-hidden="true"></span></header><div class="class-archetype-list">${classes.filter(c => c.archetype === group).map(c => `<button type="button" class="class-choice ${c.id === selected ? 'is-selected' : ''}" data-select="${esc(c.id)}" aria-pressed="${c.id === selected}"><span class="class-card-illustration">${icon(c.id)}</span><span class="class-card-copy"><strong>${esc(c.name)}</strong><small>${esc(identities[c.id][0])}</small></span><span class="class-card-arrow" aria-hidden="true">›</span>${c.requiresWinterholdStudent && !player.hasWinterholdKeyword ? '<span class="class-card-lock">WINTERHOLD</span>' : ''}</button>`).join('')}</div></section>`).join('')}</div>
           <footer class="class-catalog-footer"><span>18 CLASSES <i>◇</i> 3 ARQUÉTIPOS <i>◇</i> UMA ESCOLHA</span><p>Selecione uma classe para conhecer suas habilidades e seu grimório.</p></footer>`;
       }
@@ -93,7 +98,7 @@
           if (action !== 'snapshot' || sum() > player.unspentAttributePoints) allocation = { health: 0, magicka: 0, stamina: 0 };
           message = data.result?.message || '';
         } catch (error) { message = error.message; }
-        finally { busy = false; render(); }
+        finally { busy = false; render(); if (['resetClass','demoResetClass'].includes(action)) { if (!player?.classId) container.parentElement.scrollTop = 0; else container.querySelector('.class-feedback')?.scrollIntoView({ block: 'nearest' }); } }
       }
       function click(event) {
         const el = event.target.closest('button');
@@ -101,10 +106,11 @@
         if (el.dataset.select) { selected = el.dataset.select; inspecting = true; stageIndex = null; tab = 'progression'; render(); container.parentElement.scrollTop = 0; return; }
         const action = el.dataset.action;
         if (action === 'tab') { tab = el.dataset.tab; render(); }
+        else if (action === 'ownClass') { selected = player.classId; inspecting = true; tab = 'progression'; stageIndex = null; render(); container.parentElement.scrollTop = 0; }
         else if (action === 'backCatalog') { inspecting = false; render(); container.parentElement.scrollTop = 0; }
         else if (action === 'stage') { stageIndex = Number(el.dataset.stage); render(); }
         else if (action === 'refresh') request('snapshot');
-        else if (action === 'select') request('selectClass', { classId: selected });
+        else if (action === 'select' && !player.classId) request('selectClass', { classId: selected });
         else if (action === 'demoXp' && window.AetheriusClassPreview === true) { stageIndex = null; request('demoGrantXp'); }
         else if (action === 'step') { allocation[el.dataset.key] += Number(el.dataset.delta); render(); }
         else if (action === 'allocate') request('allocateAttributes', { ...allocation });
@@ -114,7 +120,7 @@
           confirm.setAttribute('role','alert');
           confirm.innerHTML = `<p>Redefinir sua classe remove sua progressão e restaura seus atributos raciais. Confirmar?</p>${button('CONFIRMAR REDEFINIÇÃO','confirmReset')} ${button('CANCELAR','cancelReset')}`;
           container.appendChild(confirm); confirm.querySelector('button').focus();
-        } else if (action === 'confirmReset') { tab = 'progression'; selected = null; inspecting = false; stageIndex = null; request('resetClass'); }
+        } else if (action === 'confirmReset') { request(window.AetheriusClassPreview === true ? 'demoResetClass' : 'resetClass'); }
         else if (action === 'cancelReset') render();
       }
 

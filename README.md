@@ -25,6 +25,8 @@ A prévia abre em `http://127.0.0.1:5510/?preview`. Ela usa o ClassSystem e o ro
 
 Após selecionar uma classe na prévia, o botão temporário **+ EXP PARA PRÓXIMO NÍVEL** concede a experiência necessária para avançar um nível, liberando atributos e marcos pelo LevelingSystem real. Ele simula ciclos sem cansaço diário para permitir testar até o nível 40. A ação `demoGrantXp` só é registrada pelo servidor local de prévia; o botão não aparece no jogo.
 
+**TODAS AS CLASSES** retorna ao catálogo mesmo com uma classe atribuída; **MINHA CLASSE** retorna à progressão do personagem. Inspecionar outra classe mostra apenas seus dados de apresentação, sem alterar a classe atual. A redefinição só retorna ao catálogo após sucesso; falhas mantêm a classe e exibem o motivo. No jogo, a redefinição é gratuita até o nível 15 e exige ticket acima desse nível. Na prévia, a ação exclusiva `demoResetClass` fornece o ticket de demonstração para permitir redefinir em qualquer nível.
+
 O pacote sai em `dist/meridian/Data/MeridianUI/aetheriusui/`. Para instalação nova, copie a árvore Data para o mod do Core. Para uma instalação com outros módulos, copie apenas `modules/class/`, acrescente o CSS ao `<head>` do index do Core e carregue `data.js` e `class-module.js` depois de `shell.js`. Desabilite a fixture `class-echo-module.js`, que ocupa o mesmo slot.
 
 ## Integração no servidor

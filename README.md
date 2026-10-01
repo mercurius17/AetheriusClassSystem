@@ -2,7 +2,9 @@
 
 Sistema de 18 classes, progressão, atributos, grupos e raids para SkyMP. A interface é um módulo `class` da **Aetherius UI Core 1.x**, renderizado pela view Meridian do Core. O plugin e a ponte Prisma foram removidos.
 
-O módulo segue o painel **Servidor**: fundo preto translúcido sobre o jogo, marca e navegação do Core, títulos claros, textos brancos/cinza e verde apenas nos destaques e seleções. Os ícones locais existentes são exibidos em cinza. O catálogo, descrições e regras de Roleplay permanecem nos JSONs de `config/`.
+O módulo segue o painel **Servidor**: fundo preto translúcido sobre o jogo, marca e navegação do Core, títulos claros, textos brancos/cinza e verde apenas nos destaques e seleções. A escolha mantém o formato de três colunas de arquétipos, com seis classes em cada coluna. As 18 ilustrações em SVG usam contornos finos e detalhes orgânicos; podem ser regeneradas com `npm run draw-icons`. Cada classe tem uma apresentação própria com emblema, especialidades, requisitos, trilha de progressão interativa e grimório. O catálogo, descrições e regras de Roleplay permanecem nos JSONs de `config/`.
+
+![Seleção de classes em três colunas](docs/preview/meridian-selection.jpg)
 
 ![Módulo de classe no Meridian](docs/preview/meridian-class.jpg)
 

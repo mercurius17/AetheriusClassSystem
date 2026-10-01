@@ -1,6 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 88 V45 M50 45 C40 30 25 35 20 22 C32 25 45 35 50 45 Z" fill="#4caf50" stroke="#81c784" stroke-width="2"/>
-        <path d="M50 45 C60 30 75 35 80 22 C68 25 55 35 50 45 Z" fill="#4caf50" stroke="#81c784" stroke-width="2"/>
-        <circle cx="50" cy="28" r="10" fill="#2e7d32" stroke="#a5d6a7" stroke-width="2"/>
-        <path d="M42 88 H58" stroke="#8d6e63" stroke-width="5" stroke-linecap="round"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>druida</title>
+<path d="M53 111 C63 99 59 77 59 60 C45 67 41 63 37 55 C20 59 14 47 19 38 C13 28 21 18 33 22 C37 9 51 10 56 21 C64 9 79 13 81 24 C96 17 108 25 106 36 C120 44 111 58 98 56 C93 68 80 69 72 60 C70 78 69 98 80 112 L68 109 L63 116 Z" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M62 76 L65 46 M61 61 L47 47 M66 59 L84 43 M48 47 L39 36 M82 44 L91 35 M30 26 C25 31 25 35 29 39 M93 27 C99 29 100 35 95 38 M42 56 C46 59 48 56 49 53" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M31 89 C35 79 43 80 46 72 C48 85 43 91 33 91 M83 83 C97 81 100 75 104 69 C106 85 99 92 87 90 M21 111 L34 105 M90 107 L105 112" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

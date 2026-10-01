@@ -1,6 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="28" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="6 3"/>
-        <path d="M50 15 L50 85 M28 38 L72 38" stroke="#fff8e1" stroke-width="7" stroke-linecap="square"/>
-        <circle cx="50" cy="38" r="6" fill="#ffd700"/>
-        <polygon points="50,5 53,12 60,10 55,16 62,20 54,22" fill="#ffe082"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>paladino</title>
+<path d="M63 27 L55 40 L58 82 L64 89 L70 81 L73 40 Z M64 34 L64 80 M42 83 L49 80 L79 80 L87 84 M61 89 L60 107 L67 107 L67 89 M58 110 L70 110 L68 117 L61 118 Z" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M64 5 L64 18 M42 10 L47 21 M22 23 L35 32 M11 43 L28 48 M9 66 L27 65 M20 86 L34 78 M86 10 L81 21 M108 24 L95 32 M118 43 L101 49 M117 65 L101 65 M110 87 L94 78" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M34 48 C40 18 87 19 96 47 M37 65 C41 78 45 84 51 88 M77 87 C88 77 91 68 91 57 M58 19 L63 14 L69 19" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

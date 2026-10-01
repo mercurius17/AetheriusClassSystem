@@ -11,7 +11,8 @@
     "test": "jest --runInBand",
     "start": "node dist/server/index.js",
     "preview": "npm run package:meridian && node scripts/preview.cjs",
-    "package:meridian": "npm run build && node scripts/package-meridian.cjs"
+    "package:meridian": "npm run build && node scripts/package-meridian.cjs",
+    "draw-icons": "node scripts/draw-class-icons.cjs"
   },
   "keywords": [
     "skymp",

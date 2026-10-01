@@ -1,6 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M25 32 C25 20 75 20 75 32 C75 55 65 75 50 82 C35 75 25 55 25 32 Z" fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2"/>
-        <ellipse cx="40" cy="40" rx="5" ry="3" fill="#212121" transform="rotate(10 40 40)"/>
-        <ellipse cx="60" cy="40" rx="5" ry="3" fill="#212121" transform="rotate(-10 60 40)"/>
-        <path d="M38 60 C45 68 55 68 62 60" stroke="#212121" stroke-width="3" stroke-linecap="round" fill="none"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>trapaceiro</title>
+<path d="M12 65 C33 37 61 31 86 46 L114 66 C91 92 62 99 37 83 Z M18 64 C37 43 65 42 89 53 M21 71 C43 90 70 93 97 75" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M54 46 C41 53 42 75 56 82 C73 89 88 72 81 57 C78 50 73 47 68 46 M62 50 C50 53 50 72 62 77 C73 81 79 69 74 60 C69 52 60 56 60 64 C60 70 67 72 70 66" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M21 26 L26 14 L30 26 L42 30 L30 33 L26 45 L22 34 L9 30 Z M91 96 L96 86 L100 97 L110 101 L100 104 L96 115 L92 104 L81 101 Z M44 22 L51 17 M80 26 L88 30" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

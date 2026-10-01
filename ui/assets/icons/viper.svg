@@ -1,8 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 15 L56 55 L50 62 L44 55 Z" fill="#2e7d32" stroke="#00e676" stroke-width="3"/>
-        <line x1="38" y1="58" x2="62" y2="58" stroke="#b9f6ca" stroke-width="3" stroke-linecap="round"/>
-        <line x1="50" y1="62" x2="50" y2="75" stroke="#1b5e20" stroke-width="3"/>
-        <circle cx="50" cy="78" r="3" fill="#00e676"/>
-        <path d="M50 15 C50 15 54 25 50 30 C46 35 50 40 50 40" stroke="#76ff03" stroke-width="2" stroke-linecap="round" fill="none"/>
-        <circle cx="50" cy="20" r="2" fill="#76ff03"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>viper</title>
+<path d="M64 10 L56 28 L58 92 L63 98 L69 92 L72 28 Z M64 25 L64 87 M45 94 L53 90 L77 90 L84 94 M62 98 L60 116 L68 116 L66 98" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M89 30 C103 18 117 35 106 45 C94 55 74 47 58 51 C36 57 22 68 27 82 C34 101 67 102 91 88 C108 79 106 68 94 69 C82 70 75 79 81 87 M41 80 C40 71 58 65 73 65 C86 66 99 61 98 54" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M88 29 L79 25 L69 29 L75 37 L87 37 L94 33 Z M79 29 L82 30 M70 31 L59 27 L60 20 M39 93 L43 98 M90 96 L94 94" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

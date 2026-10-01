@@ -1,5 +1,6 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 12 C50 12 68 35 68 55 C68 72 58 88 50 88 C42 88 32 72 32 55 C32 35 50 12 50 12 Z" fill="#ff4500" opacity="0.9"/>
-        <path d="M50 32 C50 32 60 48 60 62 C60 74 54 82 50 82 C46 82 40 74 40 62 C40 48 50 32 50 32 Z" fill="#ffa500"/>
-        <path d="M50 50 C50 50 55 60 55 70 C55 76 52 80 50 80 C48 80 45 76 45 70 C45 60 50 50 50 50 Z" fill="#ffffaa"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>piromante</title>
+<path d="M62 10 C74 31 46 35 56 53 C60 62 67 50 71 43 C78 58 92 57 95 77 C100 100 83 114 62 115 C38 115 20 99 26 79 C29 67 37 61 34 48 C43 52 45 61 46 68 C54 53 40 30 62 10 Z" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M63 25 C61 42 52 44 59 57 M34 79 C29 95 43 106 54 108 M70 107 C86 105 95 88 89 76" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M63 64 C67 77 55 83 59 91 C61 96 67 92 71 85 C84 99 71 109 61 109 C46 109 42 97 46 87 C50 78 58 74 63 64 Z" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M22 57 C18 49 22 44 18 38 M105 59 C109 50 105 46 110 41 M41 19 L38 30" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

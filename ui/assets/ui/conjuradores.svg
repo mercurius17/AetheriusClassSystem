@@ -1,5 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,10 62,38 90,50 62,62 50,90 38,62 10,50 38,38" fill="none" stroke="#d4af37" stroke-width="4"/>
-        <circle cx="50" cy="50" r="14" fill="#ffd700" opacity="0.3"/>
-        <circle cx="50" cy="50" r="6" fill="#ffffff"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>invocador</title>
+<path d="M29 20 C44 16 80 17 99 20 L91 26 C80 29 83 39 86 47 C97 69 94 94 79 111 M36 26 C47 33 42 42 39 49 C28 75 35 98 49 113 M41 24 C51 34 47 44 45 52 C37 76 41 94 50 104 M86 25 C72 34 79 44 79 53 C88 76 83 93 76 103" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M62 40 C42 37 41 64 59 70 C79 77 92 53 75 47 C65 42 54 52 58 58 C62 65 74 62 71 54 C69 50 64 53 64 57" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M26 13 L30 10 M101 15 L109 12 M60 91 L64 98 L68 91 M60 105 L64 111 L68 105" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

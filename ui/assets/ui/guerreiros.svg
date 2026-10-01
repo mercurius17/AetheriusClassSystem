@@ -1,4 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 15 L82 28 V58 C82 75 50 90 50 90 C50 90 18 75 18 58 V28 Z" fill="#263238" stroke="#cfd8dc" stroke-width="4"/>
-        <path d="M50 25 V80 M30 45 H70" stroke="#b0bec5" stroke-width="3"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>mestre espadachim</title>
+<path d="M24 17 L37 20 L85 77 L82 83 L76 81 L27 28 Z M29 23 L79 78 M70 76 L67 82 L80 98 L90 88 L85 83 M83 95 L97 112 L104 107 L91 91 M96 109 L105 119" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M106 15 L112 26 L59 82 L52 80 L51 73 L97 19 Z M103 24 L57 76 M48 77 L42 80 L32 91 L44 102 L56 87 M37 98 L22 111 L17 105 L31 91 M18 111 L12 118" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M53 22 C47 32 53 41 63 43 M73 12 L77 23 M15 60 L24 62 M99 63 L115 57" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

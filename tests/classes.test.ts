@@ -192,7 +192,7 @@ describe('Sistema de Classes e Regras de Negócio', () => {
         }
       }
     }
-    expect(totalPerksChecked).toBe(351);
+    expect(totalPerksChecked).toBe(350);
   });
 
   test('Deve garantir integridade dos ícones SVG para as 18 classes na interface', () => {

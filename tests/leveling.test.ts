@@ -60,7 +60,6 @@ describe('Sistema de Leveling e Fórmulas Matemáticas de XP', () => {
   test('Deve ignorar XP e classificação de chefe forjadas pelo cliente', () => {
     const state = PlayerRepository.getInstance().getPlayerState(9393);
     state.classId = 'arqueiro';
-    PlayerRepository.getInstance().savePlayerState(state);
 
     const result = LevelingSystem.getInstance().processCombatKill({
       killerId: 9393,

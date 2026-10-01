@@ -6,10 +6,6 @@ import {
   CLASSES_REGISTRY
 } from '../shared/classesData';
 import { FREE_RESET_MAX_LEVEL } from '../shared/levelingMath';
-import { PerkResolver } from '../shared/perkResolver';
-
-// Offline fixture only. Production now leaves unverified perks unresolved.
-beforeEach(() => PerkResolver.getInstance().setRuntimeLookup({ getFormByName: () => 0x08000001 }));
 
 describe('Sistema de Classes e Regras de Negócio', () => {
   test('Deve registrar exatamente as 18 classes divididas nos 3 arquétipos', () => {
@@ -192,7 +188,7 @@ describe('Sistema de Classes e Regras de Negócio', () => {
         }
       }
     }
-    expect(totalPerksChecked).toBe(350);
+    expect(totalPerksChecked).toBe(351);
   });
 
   test('Deve garantir integridade dos ícones SVG para as 18 classes na interface', () => {

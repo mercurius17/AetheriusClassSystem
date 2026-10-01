@@ -3,3 +3,11 @@ dist/
 *.log
 .DS_Store
 Thumbs.db
+# Local preview and validation artifacts are not part of the production changes.
+.local-validation/
+docs/preview/
+scripts/preview.cjs
+tests/classUiNavigation.test.ts
+tests/combatProfile.test.ts
+tests/meridianClient.test.ts
+tests/uiModule.test.ts

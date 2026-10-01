@@ -4,8 +4,7 @@ describe('PerkResolver - Camada de Resolução Dinâmica de FormIDs e Perks', ()
   let resolver: PerkResolver;
 
   beforeEach(() => {
-    // Deterministic mocks exist only in this isolated offline test suite.
-    resolver = new PerkResolver(undefined, undefined, undefined, true);
+    resolver = new PerkResolver();
     resolver.clearCache();
   });
 

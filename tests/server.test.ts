@@ -26,7 +26,6 @@ describe('Validação de pacotes do servidor', () => {
   test('rejeita abates sem identidade e não processa a mesma vítima duas vezes', () => {
     const state = PlayerRepository.getInstance().getPlayerState(77);
     state.classId = 'arqueiro';
-    PlayerRepository.getInstance().savePlayerState(state);
 
     const invalid = server.handleClientPacket(77, 'reportCombatKill', { victimName: 'Bandit' });
     expect(invalid.data.rejected).toBe(true);

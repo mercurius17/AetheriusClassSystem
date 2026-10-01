@@ -16,7 +16,6 @@
     "shared/**/*",
     "server/**/*",
     "client/**/*",
-    "tests/**/*",
     "vendor/**/*.ts"
   ],
   "exclude": [

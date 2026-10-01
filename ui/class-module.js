@@ -55,10 +55,9 @@
           <div class="class-facts"><div>${icon('mestre_espadachim')}<span><small>PROGRESSÃO</small><strong>${cls.stages.length} marcos · Níveis 1 a 40</strong></span></div><div>${icon('invocador')}<span><small>${choosing ? 'REQUISITO' : 'EXPERIÊNCIA'}</small><strong>${choosing ? cls.requiresWinterholdStudent ? 'Vínculo com Winterhold' : 'Livre escolha' : `${player.currentXp.toLocaleString('pt-BR')} / ${player.nextLevelXp.toLocaleString('pt-BR')} XP`}</strong></span></div><div>${icon('curandeiro')}<span><small>${choosing ? 'ATRIBUTOS' : 'PONTOS DISPONÍVEIS'}</small><strong>${choosing ? '+15 pontos por nível' : player.unspentAttributePoints + ' pontos'}</strong></span></div></div>
           ${!player.classId ? `<div class="class-enlist"><p>${cls.requiresWinterholdStudent && !player.hasWinterholdKeyword ? 'Você pode conhecer esta classe. A confirmação exige autorização do Colégio de Winterhold.' : 'Este é o caminho que você deseja seguir?'}</p>${button('CONFIRMAR ' + cls.name, 'select', `class="class-primary" ${busy || (cls.requiresWinterholdStudent && !player.hasWinterholdKeyword) ? 'disabled' : ''}`)}</div>` : ''}
           ${player.classId && choosing ? `<p class="class-note">Você está inspecionando ${esc(cls.name)}. Sua classe atual é ${esc(player.className)}. Para trocar de classe, retorne à sua classe e use a redefinição.</p>` : ''}
-          ${!choosing && window.AetheriusClassPreview === true ? `<aside class="class-demo"><div><strong>DEMONSTRAÇÃO LOCAL</strong><p>Concede a EXP para subir um nível. Simula ciclos sem cansaço diário.</p></div>${button('+ EXP PARA PRÓXIMO NÍVEL', 'demoXp', `class="class-primary" ${player.level >= 40 ? 'disabled' : ''}`)}</aside>` : ''}
           <nav class="class-tabs" aria-label="Detalhes da classe">${[['progression','PROGRESSÃO'],['spells','GRIMÓRIO'], ...(!choosing ? [['attributes','ATRIBUTOS']] : [])].map(([id,label]) => button(label, 'tab', `data-tab="${id}" aria-pressed="${tab === id}"`)).join('')}</nav>
           ${tab === 'progression' ? progression(cls, choosing) : tab === 'spells' ? spells(cls) : attributes()}
-          ${!choosing ? `<footer class="class-management">${button('REDEFINIR CLASSE', 'reset')}<span>${window.AetheriusClassPreview === true ? 'Demonstração: redefinição gratuita em qualquer nível.' : player.level <= 15 ? 'Redefinição gratuita até o nível 15.' : 'Requer Ticket de Troca de Classe.'}</span>${player.level > 15 && window.AetheriusClassPreview !== true ? '<a href="https://aetherius.net.br/" target="_blank" rel="noopener noreferrer">OBTER TICKET ↗</a>' : ''}</footer>` : ''}` : ''}</main>`;
+          ${!choosing ? `<footer class="class-management">${button('REDEFINIR CLASSE', 'reset')}<span>${player.level <= 15 ? 'Redefinição gratuita até o nível 15.' : 'Requer Ticket de Troca de Classe.'}</span>${player.level > 15 ? '<a href="https://aetherius.net.br/" target="_blank" rel="noopener noreferrer">OBTER TICKET ↗</a>' : ''}</footer>` : ''}` : ''}</main>`;
         container.insertAdjacentHTML('beforeend', `<p class="class-feedback" role="status" aria-live="polite">${esc(message)}</p>`);
         if (busy) container.querySelectorAll('button, input, select').forEach(el => { el.disabled = true; });
       }
@@ -98,7 +97,7 @@
           if (action !== 'snapshot' || sum() > player.unspentAttributePoints) allocation = { health: 0, magicka: 0, stamina: 0 };
           message = data.result?.message || '';
         } catch (error) { message = error.message; }
-        finally { busy = false; render(); if (['resetClass','demoResetClass'].includes(action)) { if (!player?.classId) container.parentElement.scrollTop = 0; else container.querySelector('.class-feedback')?.scrollIntoView({ block: 'nearest' }); } }
+        finally { busy = false; render(); if (action === 'resetClass') { if (!player?.classId) container.parentElement.scrollTop = 0; else container.querySelector('.class-feedback')?.scrollIntoView({ block: 'nearest' }); } }
       }
       function click(event) {
         const el = event.target.closest('button');
@@ -111,7 +110,6 @@
         else if (action === 'stage') { stageIndex = Number(el.dataset.stage); render(); }
         else if (action === 'refresh') request('snapshot');
         else if (action === 'select' && !player.classId) request('selectClass', { classId: selected });
-        else if (action === 'demoXp' && window.AetheriusClassPreview === true) { stageIndex = null; request('demoGrantXp'); }
         else if (action === 'step') { allocation[el.dataset.key] += Number(el.dataset.delta); render(); }
         else if (action === 'allocate') request('allocateAttributes', { ...allocation });
         else if (action === 'reset') {
@@ -120,7 +118,7 @@
           confirm.setAttribute('role','alert');
           confirm.innerHTML = `<p>Redefinir sua classe remove sua progressão e restaura seus atributos raciais. Confirmar?</p>${button('CONFIRMAR REDEFINIÇÃO','confirmReset')} ${button('CANCELAR','cancelReset')}`;
           container.appendChild(confirm); confirm.querySelector('button').focus();
-        } else if (action === 'confirmReset') { request(window.AetheriusClassPreview === true ? 'demoResetClass' : 'resetClass'); }
+        } else if (action === 'confirmReset') { request('resetClass'); }
         else if (action === 'cancelReset') render();
       }
 

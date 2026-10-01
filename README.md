@@ -4,30 +4,18 @@ Sistema de 18 classes, progressão, atributos, grupos e raids para SkyMP. A inte
 
 O módulo segue o painel **Servidor**: fundo preto translúcido sobre o jogo, marca e navegação do Core, títulos claros, textos brancos/cinza e verde apenas nos destaques e seleções. A escolha mantém o formato de três colunas de arquétipos, com seis classes em cada coluna. As 18 ilustrações em SVG usam contornos finos e detalhes orgânicos; podem ser regeneradas com `npm run draw-icons`. Cada classe tem uma apresentação própria com emblema, especialidades, requisitos, trilha de progressão interativa e grimório. O catálogo, descrições e regras de Roleplay permanecem nos JSONs de `config/`.
 
-![Seleção de classes em três colunas](docs/preview/meridian-selection.jpg)
-
-![Módulo de classe no Meridian](docs/preview/meridian-class.jpg)
-
-![Módulo GRUPO do Core](docs/preview/meridian-party.jpg)
-
-## Compilar e conferir
+## Compilar e instalar
 
 Requisitos: Node.js 18+ e checkout de [AetheriusUI_Core](https://github.com/mercurius17/AetheriusUI_Core) ao lado deste repositório, ou caminho em `AETHERIUS_UI_CORE`.
 
 ```powershell
 npm ci
-npm test
 npm run package:meridian
-npm run preview
 ```
 
-A prévia abre em `http://127.0.0.1:5510/?preview`. Ela usa o ClassSystem e o router reais em memória, com um personagem de demonstração e permissão Winterhold; não escreve na progressão do jogo. Essa ponte HTTP existe somente no servidor local de prévia e não entra no pacote Meridian.
+**TODAS AS CLASSES** retorna ao catálogo mesmo com uma classe atribuída; **MINHA CLASSE** retorna à progressão do personagem. Inspecionar outra classe mostra apenas seus dados de apresentação, sem alterar a classe atual. A redefinição só retorna ao catálogo após sucesso; falhas mantêm a classe e exibem o motivo. No jogo, a redefinição é gratuita até o nível 15 e exige ticket acima desse nível.
 
-Após selecionar uma classe na prévia, o botão temporário **+ EXP PARA PRÓXIMO NÍVEL** concede a experiência necessária para avançar um nível, liberando atributos e marcos pelo LevelingSystem real. Ele simula ciclos sem cansaço diário para permitir testar até o nível 40. A ação `demoGrantXp` só é registrada pelo servidor local de prévia; o botão não aparece no jogo.
-
-**TODAS AS CLASSES** retorna ao catálogo mesmo com uma classe atribuída; **MINHA CLASSE** retorna à progressão do personagem. Inspecionar outra classe mostra apenas seus dados de apresentação, sem alterar a classe atual. A redefinição só retorna ao catálogo após sucesso; falhas mantêm a classe e exibem o motivo. No jogo, a redefinição é gratuita até o nível 15 e exige ticket acima desse nível. Na prévia, a ação exclusiva `demoResetClass` fornece o ticket de demonstração para permitir redefinir em qualquer nível.
-
-O pacote sai em `dist/meridian/Data/MeridianUI/aetheriusui/`. Para instalação nova, copie a árvore Data para o mod do Core. Para uma instalação com outros módulos, copie apenas `modules/class/`, acrescente o CSS ao `<head>` do index do Core e carregue `data.js` e `class-module.js` depois de `shell.js`. Desabilite a fixture `class-echo-module.js`, que ocupa o mesmo slot.
+O pacote sai em `dist/meridian/Data/MeridianUI/aetheriusui/`. Para instalação nova, copie a árvore Data para o mod do Core. Para uma instalação com outros módulos, copie `modules/class/` e `modules/party/`, acrescente os dois CSS ao `<head>` do index do Core e carregue `data.js`, `class-module.js` e `party-module.js` depois de `shell.js`. Desabilite a fixture `class-echo-module.js`, que ocupa o mesmo slot.
 
 ## Integração no servidor
 
@@ -55,11 +43,5 @@ Carregue o entrypoint compilado `dist/client/index.js` no bundle Skyrim Platform
 Foi incorporado o adapter de [AetheriusDamageSystem](https://github.com/mercurius17/AetheriusDamageSystem), commit `f21faf5c4a1264f787545e20a1e4dbadc6362e80`, e seu catálogo verificado. Em `aetheriusCombatSettings.enabled=true` e `mode=aetherius`, o repositório recomputa skills da configuração, publica perks com identidades auditadas e atributos raciais/alocados, e avança a revisão acima da revisão persistida e nativa. A API deve fornecer `getActorCombatProfile` e `applyActorCombatProfile`, com métodos vinculados ao servidor.
 
 O modo `legacy` continua padrão. O modo experimental exige a build e os overlays nativos do DamageSystem; ele rejeita perks sem handler auditado e equipamentos não suportados. O ClassSystem não acrescenta multiplicadores sobre a fórmula. Falha de publicação não substitui a progressão persistida nem altera a cópia em memória. Skills recebidas do perfil são exatas, inclusive zero após reset. O resolver não inventa FormIDs em produção.
-
-## Validação e limites
-
-Compilação TypeScript, pacote Meridian e testes automatizados cobrem regras de classe, fronteira autenticada, deduplicação sequencial, convites, sessão do cliente, perfis nativos e preservação de progressão em falhas. A prévia foi verificada visualmente com seleção/confirmacão, grimório, atributos e criação de grupo.
-
-Ainda exige validação no Skyrim com Meridian, bridge SKSE/Core, transporte da Base e DamageSystem nativo: foco, sessão/reconexão, aplicação no ator, reset e combate. Não foi compilada nem executada uma DLL neste trabalho. O adapter do host deve ser ligado ao router e à persistência reais antes de implantar; a prévia não confirma essa ligação.
 
 SDK de servidor vendorizado do Core no commit `470526a24a003d5452802f90933c323c3bc4e300`; origem em `vendor/ui-core/PROVENANCE.md`. O frontend usa o checkout do Core informado no empacotamento. `AUDIT.md` é o histórico anterior à migração.

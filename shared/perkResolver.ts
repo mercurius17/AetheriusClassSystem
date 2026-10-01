@@ -38,8 +38,7 @@ export class PerkResolver {
   constructor(
     customDescriptions?: Record<string, PerkDescription>,
     customMappings?: Record<string, PerkMapping>,
-    runtimeLookup?: RuntimeFormLookup,
-    private readonly allowMockForTests: boolean = false
+    runtimeLookup?: RuntimeFormLookup
   ) {
     this.descriptions = customDescriptions || defaultPerksDesc;
     this.mappings = customMappings || defaultPerkMappings;
@@ -127,15 +126,6 @@ export class PerkResolver {
       }
     }
 
-    // ESTRATÉGIA 4: Mock determinístico para desenvolvimento/testes ou fallback seguro
-    if (!isResolved && this.allowMockForTests) {
-      // Gera FormID determinístico a partir do hash do nome para não quebrar testes ou execução offline
-      resolvedFormId = this.generateDeterministicFormId(cleanName);
-      strategyUsed = 'FALLBACK_MOCK';
-      isResolved = true;
-      pluginFound = (mapping.candidatePlugins && mapping.candidatePlugins.length > 0 ? mapping.candidatePlugins[0] : null) || 'Skyrim.esm';
-    }
-
     const hex = '0x' + resolvedFormId.toString(16).toUpperCase().padStart(8, '0');
 
     const result: ResolvedPerk = {
@@ -208,12 +198,4 @@ export class PerkResolver {
     this.cache.clear();
   }
 
-  private generateDeterministicFormId(str: string): number {
-    let hash = 0x02000000;
-    for (let i = 0; i < str.length; i++) {
-      hash = (hash * 31 + str.charCodeAt(i)) & 0x00FFFFFF;
-    }
-    // Prefixo 0xFE para slot virtual mock
-    return (0xFE000000 | (hash & 0x00FFFFFF)) >>> 0;
-  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "sistema-classes",
-  "version": "1.0.0",
-  "description": "Sistema de Classes, Leveling, Grupos e Raids para SkyMP e Skyrim Platform com interface PRISMA UI",
+  "version": "2.0.0",
+  "description": "Sistema de Classes para SkyMP integrado ao Meridian e Aetherius UI Core",
   "main": "dist/server/index.js",
   "scripts": {
     "sync-data": "node scripts/sync-data.js",
@@ -10,13 +10,14 @@
     "pretest": "npm run sync-data",
     "test": "jest --runInBand",
     "start": "node dist/server/index.js",
-    "preview": "npm run sync-data && npx serve ui"
+    "package:meridian": "npm run build && node scripts/package-meridian.cjs",
+    "draw-icons": "node scripts/draw-class-icons.cjs"
   },
   "keywords": [
     "skymp",
     "skyrim",
     "skyrim-platform",
-    "prisma-ui",
+    "meridian-ui",
     "classes",
     "leveling",
     "party",

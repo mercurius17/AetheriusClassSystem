@@ -1,5 +1,6 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="34" fill="#1b5e20" stroke="#69f0ae" stroke-width="3"/>
-        <path d="M50 30 V70 M30 50 H70" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
-        <circle cx="50" cy="50" r="6" fill="#b9f6ca"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>curandeiro</title>
+<path d="M63 32 C53 7 32 7 18 24 C3 42 19 64 35 80 L63 110 C77 93 95 81 108 58 C121 33 108 14 91 14 C78 14 68 23 63 32 Z" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M58 30 C48 16 30 17 21 30 M74 29 C87 16 98 21 104 32 M18 48 C24 61 39 75 47 83" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M38 82 C54 86 80 78 97 54 M47 76 L45 90 M57 75 L56 88 M67 71 L69 84 M78 65 L81 77 M87 56 L93 67 M96 47 L102 57" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M79 10 L82 2 L85 10 L94 12 L85 15 L82 24 L79 15 L71 12 Z" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

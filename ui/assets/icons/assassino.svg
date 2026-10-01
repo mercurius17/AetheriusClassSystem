@@ -1,6 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 18 C35 18 30 35 30 55 C30 75 42 82 50 82 C58 82 70 75 70 55 C70 35 65 18 50 18 Z" fill="#212121" stroke="#757575" stroke-width="3"/>
-        <ellipse cx="43" cy="48" rx="4" ry="2" fill="#d50000"/>
-        <ellipse cx="57" cy="48" rx="4" ry="2" fill="#d50000"/>
-        <path d="M38 65 C45 70 55 70 62 65" stroke="#424242" stroke-width="2" fill="none"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>assassino</title>
+<path d="M62 9 C39 22 29 37 24 68 L16 105 L42 96 L49 119 L64 111 L79 118 L87 98 L111 104 L99 67 C94 39 81 20 62 9 Z M61 19 C44 29 39 45 37 64 L41 80 L50 73 M65 20 C80 30 87 47 90 66 L84 80 L76 73" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M43 56 C50 46 75 45 86 56 L76 79 L65 95 L54 81 Z M46 58 L59 63 L51 65 M82 58 L69 63 L77 65 M62 66 L59 78 L67 78 M58 85 L69 85" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M33 83 L28 96 M94 83 L101 96 M43 103 L46 112 M85 105 L81 113" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

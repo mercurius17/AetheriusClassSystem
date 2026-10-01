@@ -1,7 +1,6 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="42" stroke="#a0c4ff" stroke-width="2" stroke-dasharray="4 2"/>
-        <path d="M50 20 C35 35 30 50 50 65 C70 50 65 35 50 20Z" fill="#ff7b00" opacity="0.8"/>
-        <path d="M30 45 C45 55 55 70 40 80 C25 75 25 55 30 45Z" fill="#00f0ff" opacity="0.8"/>
-        <path d="M70 45 C55 55 45 70 60 80 C75 75 75 55 70 45Z" fill="#ffd700" opacity="0.8"/>
-        <circle cx="50" cy="50" r="6" fill="#ffffff"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>elementalista</title>
+<path d="M65 13 C44 9 36 23 38 38 C40 53 53 58 65 53 C80 48 86 34 78 22 C75 17 70 14 65 13 Z M61 19 C48 18 43 28 45 39 C47 49 61 51 70 44 C79 36 75 22 64 20" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M34 64 C17 60 9 72 12 89 C15 105 28 115 43 109 C58 103 61 87 52 74 C47 67 40 65 34 64 Z M32 70 C21 70 17 78 20 89 C23 101 35 105 45 97 C55 88 48 74 36 71" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M93 62 C76 62 68 76 72 91 C76 107 90 113 104 105 C118 97 119 81 109 69 C105 64 99 62 93 62 Z M94 69 C83 69 77 81 81 91 C85 101 98 103 106 94 C113 86 106 72 98 70" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M62 61 L65 66 L69 61 M62 74 L64 86 L67 75" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

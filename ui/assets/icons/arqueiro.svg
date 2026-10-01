@@ -1,7 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 15 C60 35 60 65 30 85" stroke="#8d6e63" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <line x1="30" y1="15" x2="30" y2="85" stroke="#b0bec5" stroke-width="1.5"/>
-        <line x1="20" y1="50" x2="75" y2="50" stroke="#eceff1" stroke-width="3" stroke-linecap="round"/>
-        <polygon points="75,45 85,50 75,55" fill="#eceff1"/>
-        <polygon points="20,46 25,50 20,54" fill="#8d6e63"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>arqueiro</title>
+<path d="M42 12 C79 26 88 45 85 64 C87 85 73 102 42 115 L49 100 C69 88 75 79 75 64 C76 46 65 37 49 28 Z M44 15 L56 64 L44 111 M50 29 C67 41 78 52 79 64 M49 101 C65 91 77 78 79 68" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M14 64 L112 64 M97 54 L117 64 L97 73 L102 64 Z M20 64 L10 53 L27 55 L37 64 L27 72 L10 74 Z M18 57 L26 63 M17 71 L27 66" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M53 57 L61 59 L62 69 L53 72 M39 5 L40 10 M39 118 L40 123" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

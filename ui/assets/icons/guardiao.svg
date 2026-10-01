@@ -1,6 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 15 L80 28 V55 C80 72 50 88 50 88 C50 88 20 72 20 55 V28 Z" fill="#37474f" stroke="#cfd8dc" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M50 25 L70 35 V52 C70 65 50 77 50 77 C50 77 30 65 30 52 V35 Z" fill="#455a64" stroke="#b0bec5" stroke-width="2"/>
-        <line x1="50" y1="25" x2="50" y2="75" stroke="#eceff1" stroke-width="3"/>
-        <line x1="30" y1="45" x2="70" y2="45" stroke="#eceff1" stroke-width="3"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>guardiao</title>
+<path d="M64 10 L109 30 L108 66 C105 87 87 104 64 119 C41 105 22 89 20 67 L19 30 Z M64 18 L102 35 L100 66 C97 83 83 97 64 109 C46 96 30 82 28 65 L27 35 Z" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M51 81 L43 71 C38 66 40 59 45 61 L53 68 L53 44 C53 39 58 38 60 43 L61 60 L61 33 C61 28 67 28 68 33 L68 59 L70 37 C71 32 77 33 77 39 L76 66 L81 52 C84 48 90 50 88 56 L82 79 C77 91 71 95 59 91 Z" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M56 76 C64 70 74 73 76 79 M59 88 L73 88 M23 22 L37 16 M90 16 L104 24" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

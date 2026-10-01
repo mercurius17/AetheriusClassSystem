@@ -1,7 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="20" y1="80" x2="80" y2="20" stroke="#8d6e63" stroke-width="5" stroke-linecap="round"/>
-        <line x1="80" y1="80" x2="20" y2="20" stroke="#8d6e63" stroke-width="5" stroke-linecap="round"/>
-        <path d="M68 15 C75 12 85 22 82 28 C78 35 68 32 68 15 Z" fill="#b71c1c" stroke="#d32f2f" stroke-width="2"/>
-        <path d="M32 15 C25 12 15 22 18 28 C22 35 32 32 32 15 Z" fill="#b71c1c" stroke="#d32f2f" stroke-width="2"/>
-        <circle cx="50" cy="50" r="8" fill="#ff5252" stroke="#ffffff" stroke-width="2"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>berserker</title>
+<path d="M28 17 L37 10 L47 12 L55 17 L57 30 L50 35 L44 32 L43 24 L39 26 L38 35 L31 31 L26 24 Z M28 18 L36 24 M38 15 L44 21 M47 17 L49 28" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M55 23 C68 29 74 39 80 45 L88 61 C102 68 109 84 101 97 C92 114 60 116 37 108 C27 104 17 101 13 91 C27 88 42 88 47 80 C52 75 58 73 66 76 M80 45 C75 58 65 65 61 70 M76 65 C73 80 59 93 43 95 M85 80 C90 96 77 104 62 103" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M17 67 L24 53 L22 74 L29 64 M107 36 L99 52 L114 44 M9 108 L17 112" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

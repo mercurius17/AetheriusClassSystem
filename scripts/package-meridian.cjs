@@ -1,0 +1,23 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const core = path.resolve(process.env.AETHERIUS_UI_CORE || path.join(root, '..', 'AetheriusUI_Core'));
+const source = path.join(core, 'frontend', 'Data', 'MeridianUI', 'aetheriusui');
+if (!fs.existsSync(path.join(source, 'shell.js'))) throw new Error('Set AETHERIUS_UI_CORE to the AetheriusUI_Core checkout.');
+const target = path.join(root, 'dist', 'meridian', 'Data', 'MeridianUI', 'aetheriusui');
+fs.mkdirSync(target, { recursive: true });
+fs.cpSync(source, target, { recursive: true });
+const moduleDir = path.join(target, 'modules', 'class');
+fs.mkdirSync(moduleDir, { recursive: true });
+fs.copyFileSync(path.join(root, 'ui', 'class-module.js'), path.join(moduleDir, 'class-module.js'));
+fs.copyFileSync(path.join(root, 'ui', 'class-module.css'), path.join(moduleDir, 'class-module.css'));
+fs.copyFileSync(path.join(root, 'ui', 'js', 'embedded-data.js'), path.join(moduleDir, 'data.js'));
+fs.cpSync(path.join(root, 'ui', 'assets'), path.join(moduleDir, 'assets'), { recursive: true });
+const partyDir = path.join(target, 'modules', 'party');
+fs.mkdirSync(partyDir, { recursive: true });
+for (const file of ['party-module.js', 'party-module.css']) fs.copyFileSync(path.join(root, 'ui', file), path.join(partyDir, file));
+let html = fs.readFileSync(path.join(target, 'index.html'), 'utf8');
+html = html.replace('</head>', '<link rel="stylesheet" href="./modules/class/class-module.css">\n<link rel="stylesheet" href="./modules/party/party-module.css">\n</head>')
+  .replace('</body>', '<script src="./modules/class/data.js"></script>\n<script src="./modules/class/class-module.js"></script>\n<script src="./modules/party/party-module.js"></script>\n</body>');
+fs.writeFileSync(path.join(target, 'index.html'), html);
+console.log('Meridian package:', target);

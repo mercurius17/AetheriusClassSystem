@@ -6,7 +6,7 @@ import { PlayerRepository } from './storage/playerRepository';
 import { CombatKillEvent, PlayerClassState } from '../shared/types';
 import { PerkResolver } from '../shared/perkResolver';
 
-declare const mp: any;
+import { getClassRuntime } from './runtime';
 
 export class SkyMPClassServer {
   private static instance: SkyMPClassServer;
@@ -34,6 +34,7 @@ export class SkyMPClassServer {
   }
 
   public initialize(): void {
+    const mp = getClassRuntime();
     console.log('[SkyMPClassServer] Inicializando Sistema de Classes, Leveling, Grupos e Raids...');
 
     // 1. Diagnóstico do PerkResolver
@@ -61,7 +62,7 @@ export class SkyMPClassServer {
   }
 
   /**
-   * Processador de pacotes vindos do cliente (Prisma UI / Skyrim Platform).
+   * Regras de domínio usadas pelo adapter autenticado da Aetherius UI.
    */
   public handleClientPacket(playerId: number, packetType: string, payload: unknown): any {
     if (!Number.isSafeInteger(playerId) || playerId <= 0 || typeof packetType !== 'string') {
@@ -237,4 +238,4 @@ export class SkyMPClassServer {
 
 // Inicializa a instância principal
 export const serverInstance = SkyMPClassServer.getInstance();
-serverInstance.initialize();
+if (require.main === module) serverInstance.initialize();

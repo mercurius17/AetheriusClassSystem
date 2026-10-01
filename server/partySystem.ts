@@ -72,6 +72,15 @@ export class PartySystem {
     return this.parties.get(partyId) || null;
   }
 
+  public getPendingInvites(playerId: number): Array<{ inviteId: string; partyId: string; expiresAt: number }> {
+    const result = [];
+    for (const [inviteId, invite] of this.pendingInvites) {
+      if (invite.expiresAt <= Date.now()) { this.pendingInvites.delete(inviteId); continue; }
+      if (invite.targetId === playerId) result.push({ inviteId, partyId: invite.partyId, expiresAt: invite.expiresAt });
+    }
+    return result;
+  }
+
   public invitePlayer(leaderOrMemberId: number, targetPlayerId: number): { success: boolean; inviteId?: string; message: string } {
     const party = this.getPartyByPlayerId(leaderOrMemberId);
     if (!party) {

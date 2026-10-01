@@ -1,5 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M25 25 L75 75 M75 25 L25 75" stroke="#7c4dff" stroke-width="5" stroke-linecap="round"/>
-        <path d="M50 15 L65 35 L50 85 L35 35 Z" fill="none" stroke="#b388ff" stroke-width="3"/>
-        <circle cx="50" cy="50" r="12" stroke="#ffffff" stroke-width="2" fill="none"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>anti mago</title>
+<path d="M64 12 L106 29 L106 65 C102 87 83 103 63 116 C42 102 25 85 23 65 L21 29 Z M65 20 L98 35 M99 48 L98 65 C93 83 79 97 64 106 M54 103 C37 88 30 76 30 59 L30 35 L54 25" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M50 79 L44 64 C42 59 48 57 51 62 L56 70 L56 42 C56 37 62 36 63 42 L64 64 L66 33 C67 27 73 29 73 34 L72 65 L76 44 C78 39 84 41 83 47 L78 79 C73 92 61 94 54 86 Z" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M40 44 L89 89 M34 47 L87 99 M81 21 L78 13 L86 16 M17 82 L10 89 L20 91" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

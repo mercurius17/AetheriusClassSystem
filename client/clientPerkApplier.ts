@@ -187,14 +187,14 @@ export class ClientPerkApplier {
     const player = Game.getPlayer();
     if (!player) return updated;
 
-    if (!playerState || !playerState.classId || !playerState.unlockedSkills) {
+    if (!playerState || !playerState.unlockedSkills) {
       return updated;
     }
 
     for (const [skillName, targetVal] of Object.entries(playerState.unlockedSkills)) {
       try {
         const curVal = player.getActorValue(skillName);
-        if (curVal < targetVal) {
+        if (curVal !== targetVal) {
           player.setActorValue(skillName, targetVal);
           updated[skillName] = targetVal;
           printConsole(`[ClientPerkApplier] Habilidade ${skillName} atualizada de ${curVal} para ${targetVal} (Estágio da Classe)`);

@@ -1,4 +1,5 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M55 10 L25 52 L48 52 L40 90 L75 46 L50 46 L65 10 Z" fill="#ffe600" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
-        <circle cx="48" cy="49" r="3" fill="#ffffff"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>eletromante</title>
+<path d="M73 12 L34 60 L58 61 L43 111 L95 52 L70 52 L84 13 Z M72 22 L45 55 M51 98 L85 58" stroke="#e3e5e5" stroke-width="1.7"/>
+<path d="M29 19 L25 34 L16 30 L21 46 M101 78 L108 90 L117 84 L113 101 M16 63 L8 67 M100 28 L112 22" stroke="#e3e5e5" stroke-width="1.25"/>
+<path d="M53 21 L43 35 M92 105 L83 112 M29 99 L25 112" stroke="#b9bfc2" stroke-width="1.25"/>
+</svg>

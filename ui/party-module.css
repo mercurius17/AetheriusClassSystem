@@ -1,0 +1,27 @@
+.shell.is-party-workspace .workspace-frame { background: rgba(0,0,0,.78); border: 0; border-radius: 12px; box-shadow: 0 22px 60px rgba(0,0,0,.32); }
+.shell.is-party-workspace .workspace-topline,.shell.is-party-workspace .module-content,.shell.is-party-workspace .workspace-footer { background: transparent; }
+.shell.is-party-workspace .shell-header,.shell.is-party-workspace .shell-footer,.shell.is-party-workspace .close-button,.shell.is-party-workspace kbd { border: 0; }
+.shell.is-party-workspace .workspace-rule { display: none; }
+.shell.is-party-workspace .module-content { overflow: auto; padding: 16px clamp(20px,3vw,48px); scrollbar-color: #8c9499 transparent; scrollbar-width: thin; }
+.aetherius-party { font: 16px/1.6 'Segoe UI',sans-serif; color: #f1f2f3; }
+.aetherius-party p { color: #d4d8db; }
+.aetherius-party h2,.aetherius-party h3 { font-family: Georgia,serif; letter-spacing: .04em; }
+.party-introduction { border-bottom: 1px solid #ffffff30; margin-bottom: 24px; padding-bottom: 16px; }
+.party-introduction > span { font-size: 13px; color: #bac1c5; letter-spacing: .12em; }
+.party-introduction h2 { font-size: 30px; margin: 8px 0; }
+.aetherius-party button,.aetherius-party input,.aetherius-party select { font: inherit; color: #f1f2f3; border: 1px solid #ffffff50; background: #101512; padding: 10px 14px; border-radius: 2px; }
+.aetherius-party button { cursor: pointer; font-size: 14px; }
+.aetherius-party button:hover { border-color: #69cf99; }
+.aetherius-party button:disabled { opacity: .5; cursor: default; }
+.aetherius-party :focus-visible { outline: 2px solid #69cf99; outline-offset: 3px; }
+.aetherius-party .party-toolbar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
+.aetherius-party .party-members article { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 20px 0; border-bottom: 1px solid #ffffff25; }
+.aetherius-party .party-members article > div { flex: 1 1 220px; }
+.aetherius-party .party-members strong { font: 20px Georgia,serif; }
+.aetherius-party .party-members p { margin: 8px 0; }
+.aetherius-party .party-note { padding: 16px; border: 1px solid #ffffff30; margin: 16px 0; }
+.aetherius-party .party-note button { margin: 8px; }
+.aetherius-party form { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin: 24px 0; }
+.aetherius-party input { display: block; margin-top: 8px; max-width: 100%; }
+.shell.is-party-workspace .world-shade { background: rgba(0,0,0,.12) !important; }
+.shell.is-preview.is-party-workspace::before { opacity: 1 !important; }

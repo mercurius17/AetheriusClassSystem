@@ -1,12 +1,14 @@
 # AetheriusClassSystem — Meridian / Aetherius UI Core
 
-Sistema de 18 classes, progressão, atributos, grupos e raids para SkyMP. A interface é um módulo `class` da **Aetherius UI Core 1.x**, renderizado pela view Meridian do Core. O plugin e a ponte Prisma foram removidos.
+Sistema de 18 classes, progressão, atributos, grupos e raids para SkyMP. A interface usa os módulos `class` e `party` da **Aetherius UI Core 1.x**, renderizado pela view Meridian do Core. O plugin e a ponte Prisma foram removidos.
 
 O módulo segue o painel **Servidor**: fundo preto translúcido sobre o jogo, marca e navegação do Core, títulos claros, textos brancos/cinza e verde apenas nos destaques e seleções. A escolha mantém o formato de três colunas de arquétipos, com seis classes em cada coluna. As 18 ilustrações em SVG usam contornos finos e detalhes orgânicos; podem ser regeneradas com `npm run draw-icons`. Cada classe tem uma apresentação própria com emblema, especialidades, requisitos, trilha de progressão interativa e grimório. O catálogo, descrições e regras de Roleplay permanecem nos JSONs de `config/`.
 
 ![Seleção de classes em três colunas](docs/preview/meridian-selection.jpg)
 
 ![Módulo de classe no Meridian](docs/preview/meridian-class.jpg)
+
+![Módulo GRUPO do Core](docs/preview/meridian-party.jpg)
 
 ## Compilar e conferir
 
@@ -36,7 +38,7 @@ const unloadClass = registerClass(coreRouter, classRuntime);
 
 `classRuntime` é uma implementação vinculada ao servidor de `server/runtime.ts`: `get(actorId, property)`, `set(actorId, property, value)`, `getServerSettings()` e, quando disponível, `makeProperty()`. Pode ser o objeto `mp` no ambiente de gamemode que já fornece essas funções. Em um host Node separado desse ambiente, exponha essas operações através do adapter autorizado do host; não suponha que exista `global.mp`. O registro recusa uma API sem persistência/settings. O Core mantém a sessão, a deduplicação, o limite de mensagens e o envio dos envelopes; o módulo recebe o ator de `context.actorId`, nunca do payload.
 
-O ClassSystem não cria uma segunda conexão nem um segundo router no jogo. Ações registradas: `snapshot`, seleção, atributos, reset e operações de grupo/raid. Relatos de abate do browser não são permitidos nesse canal. O pipeline confiável de mortes da Base deve continuar chamando o LevelingSystem no servidor.
+O ClassSystem não cria uma segunda conexão nem um segundo router no jogo. O canal `class` registra snapshot, seleção, atributos e redefinição. O canal `party` registra snapshot e operações de grupo/raid, apresentadas exclusivamente no módulo **GRUPO** (`/party`, slot 3) do Core. O bootstrap registra ambos; não é necessário alterar o shell do Core. Relatos de abate do browser não são permitidos nesse canal. O pipeline confiável de mortes da Base deve continuar chamando o LevelingSystem no servidor.
 
 No catálogo de disponibilidade do servidor Core, marque `class` como disponível somente após o registro bem-sucedido. O frontend registra `/class`, slot 1. Os handlers retornam estado autoritativo e os convites do próprio jogador; snapshots periódicos atualizam progressão e grupo enquanto o menu está montado. Listeners, temporizador e handlers são removidos no unload.
 

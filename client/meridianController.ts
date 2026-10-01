@@ -17,14 +17,14 @@ export class MeridianController {
     if (data.type !== 'envelope' || !this.sessionId) return;
     let envelope;
     try { envelope = validateEnvelope(data.envelope, { requireSession: true }); } catch { return; }
-    if (envelope.sessionId !== this.sessionId || envelope.moduleId !== 'class' || !['response', 'snapshot', 'event'].includes(envelope.kind)) return;
+    if (envelope.sessionId !== this.sessionId || !['class', 'party'].includes(envelope.moduleId) || !['response', 'snapshot', 'event'].includes(envelope.kind)) return;
     const state = envelope.payload as { player?: PlayerClassState; party?: PartyState | null } | undefined;
-    if (state?.player) {
+    if (envelope.moduleId === 'class' && state?.player) {
       const applier = ClientPerkApplier.getInstance();
       applier.syncPerks(state.player);
       applier.syncSkills(state.player);
       applier.syncAttributes(state.player);
     }
-    if (state && 'party' in state) PartyHud.getInstance().updatePartyState(state.party ?? null);
+    if (envelope.moduleId === 'party' && state && 'party' in state) PartyHud.getInstance().updatePartyState(state.party ?? null);
   }
 }

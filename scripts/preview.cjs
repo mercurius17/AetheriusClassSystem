@@ -11,8 +11,27 @@ const actorId = 1;
 const state = serverInstance.playerRepo.getPlayerState(actorId, 'Dovahkiin · PRÉVIA LOCAL');
 state.hasWinterholdKeyword = true;
 serverInstance.playerRepo.savePlayerState(state);
+// This action exists only in this localhost preview process, never in the host bootstrap.
+router.register('class', 'demoGrantXp', (context, payload) => {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload) || Object.keys(payload).length) throw new Error('Invalid demo payload');
+  const player = serverInstance.playerRepo.getPlayerState(context.actorId);
+  if (!player.classId) throw new Error('Selecione uma classe primeiro.');
+  let remaining = Math.max(0, player.nextLevelXp - player.currentXp), awarded = 0;
+  // Simulate successive rested cycles through the real leveling pipeline.
+  // This makes all milestones accessible in the demo without changing game rules.
+  for (let cycle = 0; remaining > 0 && player.level < 40 && cycle < 10; cycle++) {
+    player.dailyXpGained = 0; player.isFatigued = false;
+    const result = serverInstance.levelingSystem.addExperience(player, remaining);
+    if (!result.xpAwarded) break;
+    remaining -= result.xpAwarded; awarded += result.xpAwarded;
+  }
+  const snapshot = serverInstance.handleClientPacket(context.actorId, 'requestInitialData', {}).data;
+  const { unlockedPerksData, partyId, isRaid, ...updated } = snapshot.player;
+  return { player: updated, result: { message: awarded ? `Demonstração: +${awarded.toLocaleString('pt-BR')} EXP · Nível ${updated.level}.` : 'Demonstração: nível máximo atingido.' } };
+});
 const root = path.resolve(__dirname, '../dist/meridian/Data/MeridianUI/aetheriusui');
 const bridge = `<script>
+window.AetheriusClassPreview = true;
 function previewReceive(packet) { window.dispatchEvent(new CustomEvent('aetherius-ui-message', { detail: btoa(unescape(encodeURIComponent(JSON.stringify(packet)))) })); }
 window.aetheriusUiSend = function(json) { fetch('/preview-request', { method:'POST', headers:{'Content-Type':'application/json'}, body:json }).then(r=>r.json()).then(envelope=>previewReceive({type:'envelope',envelope})); };
 previewReceive({type:'session',sessionId:'local-preview'});

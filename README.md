@@ -23,6 +23,8 @@ npm run preview
 
 A prévia abre em `http://127.0.0.1:5510/?preview`. Ela usa o ClassSystem e o router reais em memória, com um personagem de demonstração e permissão Winterhold; não escreve na progressão do jogo. Essa ponte HTTP existe somente no servidor local de prévia e não entra no pacote Meridian.
 
+Após selecionar uma classe na prévia, o botão temporário **+ EXP PARA PRÓXIMO NÍVEL** concede a experiência necessária para avançar um nível, liberando atributos e marcos pelo LevelingSystem real. Ele simula ciclos sem cansaço diário para permitir testar até o nível 40. A ação `demoGrantXp` só é registrada pelo servidor local de prévia; o botão não aparece no jogo.
+
 O pacote sai em `dist/meridian/Data/MeridianUI/aetheriusui/`. Para instalação nova, copie a árvore Data para o mod do Core. Para uma instalação com outros módulos, copie apenas `modules/class/`, acrescente o CSS ao `<head>` do index do Core e carregue `data.js` e `class-module.js` depois de `shell.js`. Desabilite a fixture `class-echo-module.js`, que ocupa o mesmo slot.
 
 ## Integração no servidor

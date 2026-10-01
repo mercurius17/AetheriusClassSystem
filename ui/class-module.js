@@ -50,6 +50,7 @@
           <div class="class-introduction"><span class="class-section-mark" aria-hidden="true">✧</span><p class="class-description">${esc(cls.description)}</p></div>
           <div class="class-facts"><div>${icon('mestre_espadachim')}<span><small>PROGRESSÃO</small><strong>${cls.stages.length} marcos · Níveis 1 a 40</strong></span></div><div>${icon('invocador')}<span><small>${choosing ? 'REQUISITO' : 'EXPERIÊNCIA'}</small><strong>${choosing ? cls.requiresWinterholdStudent ? 'Vínculo com Winterhold' : 'Livre escolha' : `${player.currentXp.toLocaleString('pt-BR')} / ${player.nextLevelXp.toLocaleString('pt-BR')} XP`}</strong></span></div><div>${icon('curandeiro')}<span><small>${choosing ? 'ATRIBUTOS' : 'PONTOS DISPONÍVEIS'}</small><strong>${choosing ? '+15 pontos por nível' : player.unspentAttributePoints + ' pontos'}</strong></span></div></div>
           ${choosing ? `<div class="class-enlist"><p>${cls.requiresWinterholdStudent && !player.hasWinterholdKeyword ? 'Você pode conhecer esta classe. A confirmação exige autorização do Colégio de Winterhold.' : 'Este é o caminho que você deseja seguir?'}</p>${button('CONFIRMAR ' + cls.name, 'select', `class="class-primary" ${busy || (cls.requiresWinterholdStudent && !player.hasWinterholdKeyword) ? 'disabled' : ''}`)}</div>` : ''}
+          ${!choosing && window.AetheriusClassPreview === true ? `<aside class="class-demo"><div><strong>DEMONSTRAÇÃO LOCAL</strong><p>Concede a EXP para subir um nível. Simula ciclos sem cansaço diário.</p></div>${button('+ EXP PARA PRÓXIMO NÍVEL', 'demoXp', `class="class-primary" ${player.level >= 40 ? 'disabled' : ''}`)}</aside>` : ''}
           <nav class="class-tabs" aria-label="Detalhes da classe">${[['progression','PROGRESSÃO'],['spells','GRIMÓRIO'], ...(!choosing ? [['attributes','ATRIBUTOS']] : [])].map(([id,label]) => button(label, 'tab', `data-tab="${id}" aria-pressed="${tab === id}"`)).join('')}</nav>
           ${tab === 'progression' ? progression(cls, choosing) : tab === 'spells' ? spells(cls) : attributes()}
           ${!choosing ? `<footer class="class-management">${button('REDEFINIR CLASSE', 'reset')}<span>${player.level <= 15 ? 'Redefinição gratuita até o nível 15.' : 'Requer Ticket de Troca de Classe.'}</span>${player.level >= 15 ? '<a href="https://aetherius.net.br/" target="_blank" rel="noopener noreferrer">OBTER TICKET ↗</a>' : ''}</footer>` : ''}` : ''}</main>`;
@@ -101,6 +102,7 @@
         else if (action === 'stage') { stageIndex = Number(el.dataset.stage); render(); }
         else if (action === 'refresh') request('snapshot');
         else if (action === 'select') request('selectClass', { classId: selected });
+        else if (action === 'demoXp' && window.AetheriusClassPreview === true) { stageIndex = null; request('demoGrantXp'); }
         else if (action === 'step') { allocation[el.dataset.key] += Number(el.dataset.delta); render(); }
         else if (action === 'allocate') request('allocateAttributes', { ...allocation });
         else if (action === 'reset') {
